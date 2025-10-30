@@ -1,0 +1,128 @@
+html, body {
+    overflow: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.momo-trust-display-regular {
+    font-family: "Momo Trust Display", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.vend-sans{
+    font-family: "Vend Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.container1 {
+    width: 100%;
+    height: 100vh;
+    background-color: pink;
+
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+}
+
+.container2 {
+    width: 100%;
+    height: 100vh;
+    background-color: pink;
+
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+
+    transition: height 1.5s ease;
+}
+
+#titletext {
+    width: 100%;
+    text-align: center;
+}
+
+#credit {
+    width: 100%;
+    text-align: center;
+
+    font-family: "Vend Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 0.9rem;
+
+    margin-top: 2rem;
+}
+
+#text1 {
+    width: 100%;
+    text-align: center;
+
+    font-family: "Vend Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.2rem;
+}
+
+.listoficons {
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#funny {
+    border: 0;
+    background: none;
+}
+
+#funny img {
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+.clickcookie {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+#moosic {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 13px;
+}
+
+#start {
+    border: 0;
+    background-color: white;
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+
+    border: 2px solid black;
+
+    transition: height 1.5s ease;
+}
