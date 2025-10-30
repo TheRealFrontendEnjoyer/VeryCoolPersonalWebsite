@@ -1,9 +1,14 @@
 const titleText = document.getElementById("titletext");
 const funnycookie = document.getElementById("funny");
+const arrowdown = document.getElementById("arrowdown");
+const arrowup = document.getElementById("arrowup");
 const start = document.getElementById("start");
 const popSound = new Audio("audios/pop.mp3");
 const bgm = new Audio("audios/bgm.mp3");
+const openingdoor = new Audio("audios/openingdoor.mp3");
 const container2 = document.querySelector(".container2");
+const container1 = document.querySelector(".container1");
+const container3 = document.querySelector(".container3");
 
 const baseText = "Hello! I ";
 const startWord = "hate";
@@ -48,6 +53,22 @@ funnycookie.addEventListener("click", (event) => {
     popSound.play()
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    arrowdown.addEventListener("click", () => {
+        container1.classList.add("fade-out");
+        container3.classList.remove("fade-out");
+        container1.style.height = "0";
+        container3.style.height = "100vh";
+    });
+
+    arrowup.addEventListener("click", () => {
+        container3.classList.add("fade-out");
+        container1.classList.remove("fade-out");
+        container3.style.height = "0";
+        container1.style.height = "100vh";
+    });
+});
+
 window.addEventListener("load", () => {
   titleText.textContent = baseText + startWord + afterText;
   animateText();
@@ -55,10 +76,25 @@ window.addEventListener("load", () => {
 });
 
 function startBGM() {
-  bgm.loop = true;
-  bgm.volume = 0.15;
-  bgm.play().catch(err => console.log("BGM play blocked:", err));
-  container2.style.height = "0px";
+
+  openingdoor.play();
+  openingdoor.volume = 0.15;
+
+  container2.style.backgroundColor = "black";
+  start.style.opacity = "0";
+
+  container1.style.backgroundColor = "black";
+
+  setTimeout(() => {
+    bgm.loop = true;
+    bgm.volume = 0.15;
+
+    bgm.play().catch(err => console.log("BGM play blocked:", err));
+
+    container1.style.backgroundColor = "pink";
+    container2.style.height = "0";
+  }, "3000");
+
   start.removeEventListener("click", startBGM);
 }
 
