@@ -105,6 +105,7 @@ html, body {
 #funny {
     border: 0;
     background: none;
+    opacity: 0;
 
     transition: opacity 1.5s ease;
 }
