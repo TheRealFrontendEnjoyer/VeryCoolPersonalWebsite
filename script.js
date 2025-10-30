@@ -73,6 +73,8 @@ window.addEventListener("load", () => {
   titleText.textContent = baseText + startWord + afterText;
   animateText();
 
+  funnycookie.style.opacity = "0";
+
 });
 
 function startBGM() {
@@ -96,6 +98,7 @@ function startBGM() {
     container1.style.backgroundColor = "pink";
     container2.style.height = "0";
     container1.classList.remove("fade-out");
+    funnycookie.style.opacity = "100%";
   }, "3000");
 
   start.removeEventListener("click", startBGM);
