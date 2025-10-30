@@ -77,6 +77,8 @@ window.addEventListener("load", () => {
 
 function startBGM() {
 
+  container1.classList.add("fade-out");
+
   openingdoor.play();
   openingdoor.volume = 0.15;
 
@@ -93,6 +95,7 @@ function startBGM() {
 
     container1.style.backgroundColor = "pink";
     container2.style.height = "0";
+    container1.classList.remove("fade-out");
   }, "3000");
 
   start.removeEventListener("click", startBGM);
