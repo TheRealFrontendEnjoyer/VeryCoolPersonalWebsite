@@ -1,10 +1,8 @@
 const titleText = document.getElementById("titletext");
 const funnycookie = document.getElementById("funny");
 const start = document.getElementById("start");
-
-const popSound = new Audio("/https://therealfrontendenjoyer.github.io/PersonalWebsite/audios/pop.mp3");
-const bgm = new Audio("https://therealfrontendenjoyer.github.io/PersonalWebsite/audios/bgm.mp3");
-
+const popSound = new Audio("audios/pop.mp3");
+const bgm = new Audio("audios/bgm.mp3");
 const container2 = document.querySelector(".container2");
 
 const baseText = "Hello! I ";
