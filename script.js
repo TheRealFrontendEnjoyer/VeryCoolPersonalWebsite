@@ -3,12 +3,22 @@ const funnycookie = document.getElementById("funny");
 const arrowdown = document.getElementById("arrowdown");
 const arrowup = document.getElementById("arrowup");
 const start = document.getElementById("start");
+
 const popSound = new Audio("audios/pop.mp3");
 const bgm = new Audio("audios/bgm.mp3");
 const openingdoor = new Audio("audios/openingdoor.mp3");
+
 const container2 = document.querySelector(".container2");
 const container1 = document.querySelector(".container1");
 const container3 = document.querySelector(".container3");
+
+const aboutmediv = document.querySelector(".aboutmediv");
+const hobbydiv = document.querySelector(".hobbydiv");
+const projectsdiv = document.querySelector(".projectsdiv");
+
+const aboutme = document.getElementById("aboutme");
+const hobby = document.getElementById("hobby");
+const projects = document.getElementById("projects");
 
 const baseText = "Hello! I ";
 const startWord = "hate";
@@ -53,6 +63,42 @@ funnycookie.addEventListener("click", (event) => {
     popSound.play()
 });
 
+aboutme.addEventListener("click", (event) => {
+    event.preventDefault();
+    aboutmediv.style.height = "100%";
+    aboutmediv.style.opacity = "100%";
+
+    hobbydiv.style.height = "0";
+    hobbydiv.style.opacity = "0";
+
+    projectsdiv.style.height = "0";
+    projectsdiv.style.opacity = "0";
+});
+
+hobby.addEventListener("click", (event) => {
+    event.preventDefault();
+    aboutmediv.style.height = "0";
+    aboutmediv.style.opacity = "0";
+
+    hobbydiv.style.height = "100%";
+    hobbydiv.style.opacity = "100%";
+
+    projectsdiv.style.height = "0";
+    projectsdiv.style.opacity = "0";
+});
+
+projects.addEventListener("click", (event) => {
+    event.preventDefault();
+    aboutmediv.style.height = "0";
+    aboutmediv.style.opacity = "0";
+
+    hobbydiv.style.height = "0";
+    hobbydiv.style.opacity = "0";
+
+    projectsdiv.style.height = "100%";
+    projectsdiv.style.opacity = "100%";
+});
+
 document.addEventListener("DOMContentLoaded", () => {
     arrowdown.addEventListener("click", () => {
         container1.classList.add("fade-out");
@@ -66,6 +112,15 @@ document.addEventListener("DOMContentLoaded", () => {
         container1.classList.remove("fade-out");
         container3.style.height = "0";
         container1.style.height = "100vh";
+
+        aboutmediv.style.height = "0";
+        aboutmediv.style.opacity = "0";
+
+        hobbydiv.style.height = "0";
+        hobbydiv.style.opacity = "0";
+
+        projectsdiv.style.height = "0";
+        projectsdiv.style.opacity = "0";
     });
 });
 
