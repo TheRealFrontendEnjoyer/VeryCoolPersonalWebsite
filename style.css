@@ -230,3 +230,17 @@ html, body {
     flex-direction: row;
     gap: 40px;
 }
+
+#cursorText {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.25s ease;
+    z-index: 9999;
+}

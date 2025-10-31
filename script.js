@@ -7,6 +7,7 @@ const start = document.getElementById("start");
 const popSound = new Audio("audios/pop.mp3");
 const bgm = new Audio("audios/bgm.mp3");
 const openingdoor = new Audio("audios/openingdoor.mp3");
+const clicksoundeffect = new Audio("audios/clicksoundeffect.mp3");
 
 const container2 = document.querySelector(".container2");
 const container1 = document.querySelector(".container1");
@@ -101,6 +102,9 @@ projects.addEventListener("click", (event) => {
 
 document.addEventListener("DOMContentLoaded", () => {
     arrowdown.addEventListener("click", () => {
+        clicksoundeffect.volume = 0.2
+        clicksoundeffect.play()
+
         container1.classList.add("fade-out");
         container3.classList.remove("fade-out");
         container1.style.height = "0";
@@ -108,6 +112,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     arrowup.addEventListener("click", () => {
+        clicksoundeffect.volume = 0.2
+        clicksoundeffect.play()
+
         container3.classList.add("fade-out");
         container1.classList.remove("fade-out");
         container3.style.height = "0";
@@ -146,7 +153,7 @@ function startBGM() {
 
   setTimeout(() => {
     bgm.loop = true;
-    bgm.volume = 0.15;
+    bgm.volume = 0.05;
 
     bgm.play().catch(err => console.log("BGM play blocked:", err));
 
@@ -160,3 +167,32 @@ function startBGM() {
 }
 
 start.addEventListener("click", startBGM);
+
+const cursorText = document.getElementById("cursorText");
+
+const hoverTexts = {
+  aboutme: "Discover more about me! :D",
+  hobby: "What could my hobbies be? :O",
+  projects: "Projects.. Do I even have those? :/",
+  start: "Open the door?",
+};
+
+Object.entries(hoverTexts).forEach(([id, text]) => {
+  const button = document.getElementById(id);
+
+  button.addEventListener("mouseenter", () => {
+    cursorText.textContent = text;
+    cursorText.style.opacity = 1;
+  });
+
+  button.addEventListener("mouseleave", () => {
+    cursorText.style.opacity = 0;
+  });
+
+  button.addEventListener("mousemove", (e) => {
+    const offsetX = 60;
+    const offsetY = -15;
+    cursorText.style.left = e.clientX + offsetX + "px";
+    cursorText.style.top = e.clientY + offsetY + "px";
+  });
+});
